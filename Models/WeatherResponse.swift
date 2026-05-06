@@ -3,7 +3,7 @@ import Foundation
 
 
 
-// Ce que l'API OpenWeatherMap nous renvoie
+
 struct WeatherResponse: Codable {
     let name: String          // Nom de la ville
     let main: MainWeather
@@ -16,7 +16,7 @@ struct MainWeather: Codable {
     let humidity: Int         // Humidité en %
     let feelsLike: Double     // Ressenti
 
-    // 🔑 L'API renvoie "feels_like" mais Swift préfère camelCase
+
     enum CodingKeys: String, CodingKey {
         case temp
         case humidity
