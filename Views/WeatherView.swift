@@ -7,7 +7,7 @@ struct WeatherView: View {
     
     var body: some View {
         ZStack {
-            // 🎨 Fond dégradé
+           
             LinearGradient(
                 colors: [.blue.opacity(0.8), .cyan.opacity(0.5)],
                 startPoint: .topLeading,
@@ -17,7 +17,7 @@ struct WeatherView: View {
             
             VStack(spacing: 24) {
                 
-                // 🔍 Barre de recherche
+             
                 HStack {
                     TextField("Entrez une ville...", text: $cityName)
                         .padding()
@@ -39,21 +39,21 @@ struct WeatherView: View {
                 }
                 .padding(.horizontal)
                 
-                // ⏳ Chargement
+               
                 if viewModel.isLoading {
                     ProgressView()
                         .tint(.white)
                         .scaleEffect(1.5)
                 }
                 
-                // ❌ Erreur
+               
                 if let error = viewModel.errorMessage {
                     Text(error)
                         .foregroundColor(.white)
                         .font(.headline)
                 }
                 
-                // ✅ Données météo
+               
                 if let weather = viewModel.weather {
                     VStack(spacing: 16) {
                         
